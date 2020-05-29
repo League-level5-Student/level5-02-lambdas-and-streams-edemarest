@@ -1,9 +1,11 @@
 package _00_JButtons_with_Lambdas;
 
 import java.awt.FlowLayout;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class LambdaButtons {
 	private JFrame window = new JFrame();
@@ -25,8 +27,25 @@ public class LambdaButtons {
 		window.pack();
 	}
 	
+	public void run() {
+		addNumbers.addActionListener(e -> {
+			int num1 = Integer.parseInt(JOptionPane.showInputDialog("Input number 1:"));
+			int num2 = Integer.parseInt(JOptionPane.showInputDialog("Input number 2:"));
+			System.out.println(num1 + " + " + num2 + " = " + (num1+num2));
+		});
+		randNumber.addActionListener(e -> {
+			JOptionPane.showMessageDialog(null, "Your random number is:  "+new Random().nextInt(50));
+		});
+		randNumber.addActionListener(e -> {
+			JOptionPane.showMessageDialog(null, "Big Chungus!!!!!");
+		});
+	}
+	
 	public static void main(String[] args) {
-		new LambdaButtons();
+		new LambdaButtons().run();
+		
+
+		
 	}
 	
 	

@@ -12,6 +12,44 @@ public class LambdaMethods {
 			}
 		}, "repeat");
 		
+		printCustomMessage((s)->{
+			String bs = "";
+			for(int i = s.length()-1; i >= 0; i--) {
+				bs+=s.charAt(i);
+			}
+			System.out.println(bs);
+		}, "repeat");
+		
+		printCustomMessage((s)->{
+			String bs = "";
+			for(int i = 0; i < s.length(); i++) {
+				if(i%2 == 0) {
+					bs+=Character.toString(s.charAt(i)).toUpperCase();
+				}
+				else {
+				bs+=Character.toString(s.charAt(i)).toLowerCase();
+				}
+			}
+			System.out.println(bs);
+		}, "repeat");
+		
+		printCustomMessage((s)->{
+			String bs = "";
+			for(int i = 0; i < s.length(); i++) {
+				bs+=s.charAt(i)+".";
+			}
+			System.out.println(bs);
+		}, "repeat");
+		printCustomMessage((s)->{
+			String bs = "";
+			for(int i = 0; i < s.length(); i++) {
+				if(!(s.charAt(i)=='a' ||s.charAt(i)=='e' ||s.charAt(i)=='i' ||s.charAt(i)=='o' ||s.charAt(i)=='u')) {
+					bs += s.charAt(i);	
+				}
+			}
+			System.out.println(bs);
+		}, "repeat");
+		
 		//2. Call the printCustonMessage method using a lambda so that the String prints backwards.
 		
 		//3. Call the printCustonMessage method using a lambda so that the String prints with a mix between upper an lower case characters.
